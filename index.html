@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .banner {
+            position: relative;
+            background-color:#2df8c5 /* Custom background color */
+        }
+        .banner img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+        }
+        .banner img.left {
+            left: 0;
+        }
+        .banner img.right {
+            right: 0;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .container {
+  /* center the container horizontally */
+     }
+
+.text-gray-800 {
+  color: #27313b;
+}
+
+.text-gray-500 {
+  color: #79828b;
+}
+.scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
+        .upper-h {
+            
+            width:300px;
+        }
+        .upper-h h2 {
+            font-size:30px;
+        }
+
+        .lower-p {
+            width:800px;
+            color:gray;
+        }
+
+        .section-4 {
+            display:flex;
+            gap:45px;
+        }
+
+        .card {
+      border-radius: 0.75rem; /* equivalent to rounded-lg in Tailwind */
+      padding: 2rem;
+      max-width: 20rem;
+    }
+    .card-header {
+      background-color: #07634c; /* dark gray */
+      color: #fff;
+      border-radius: 20px;
+      font-weight: 600;
+      width:150px;
+      margin-left:50px;
+    }
+
+    .tags {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tag {
+      background-color: #f2fbf7; /* light gray */
+      color: #111827; /* dark gray */
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px; /* equivalent to rounded-full in Tailwind */
+      margin: 0.25rem;
+      font-size: 0.875rem; /* equivalent to text-sm in Tailwind */
+      border-style:solid;
+      border-color:black;
+      border-width:2px;
+    }
+
+    .upper-h1 {
+      width:850px;
+    }
+    .upper-h1 h2 {
+        font-size:30px;
+    }
+    .lower-p1 {
+        width:850px;
+        color:gray;
+    }
+    .lower-p1 strong {
+        color:black;
+    }
+
+    .card2-container {
+      max-width: 300px;
+      height:280px;
+      background:#f2fbf7;
+      border:none;
+      box-shadow: none;
+    }
+    .card2-container img {
+        margin-left:30px;
+        margin-top:20px;
+    }
+    .card2-container h3 {
+      font-weight:500;
+      font-size:17px;
+    }
+    .card2-container p {
+     margin-top:5px;
+     color:gray;
+    }
+
+    .card-img {
+      width: 64px;
+      height: 64px;
+    }
+    .section-6 {
+        display:flex;
+        justify-content: center;
+        
+    }
+
+    .section6-cards {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:20px;
+    }
+
+    .upper-h2 {
+        width:450px;
+    }
+    .upper-h2 h2 {
+        font-size:30px;
+    }
+
+    .hero {
+      background-image: url("path/to/your/image.jpg"); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      padding-top: 200px;
+      padding-bottom: 100px;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .lower-p3 {
+        width:500px;
+    }
+
+
+    .section-10 {
+     display:flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     
+    }
+
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-color: #f0fdf4; /* light green background */
+      border-radius: 20px; /* rounded corners */
+      padding: 35px 20px; /* padding inside the container */
+      width:1000px;
+    }
+    .slider {
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      display: flex;
+      align-items: center;
+    }
+    .slider-item {
+      display: inline-block;
+      margin: 0 20px;
+    }
+    .slider-btn {
+      background-color: #f3f4f6; /* light gray background */
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      position: absolute;
+    }
+    .slider-btn-left {
+      left: 10px;
+    }
+    .slider-btn-right {
+      right: 10px;
+    }
+    .s-btn {
+     background:#d5e927;
+     border:none;
+     border-radius:10px;
+     padding: 2px 10px;
+    
+     position:relative;
+     z-index: 10;
+     top:7px;
+    }
+    .s-btn1 {
+      background:#81f076;
+      
+    }
+    .s-btn2 {
+      background:#2df8c5;
+      
+    }
+    
+    .section-8 {
+      display:flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      
+    }
+    .sec8-main {
+      background:#004246;
+      display:flex;
+      margin-top:20px;
+      padding:30px 20px;
+      border-radius:20px;
+      gap:20px;
+    }
+    .sec8-left{
+      display:grid;
+     grid-template-columns: 1fr;
+     justify-content: center;
+     place-items: center;
+    }
+    .sec8-headings {
+     display:grid;
+     grid-template-columns: 1fr;
+     justify-content: center;
+     place-items: center;
+    }
+    .sec8-header {
+     color:#2df8c5;
+     font-size:23px;
+    }
+    .sec8-headings-p {
+    color:white;
+    font-weight:500;
+    width:600px;
+    }
+    .sec8-tickers {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+      background:#013437;
+      width:650px;
+      padding:15px 5px;
+      border-radius:15px;
+      margin-top:15px;
+    }
+    .sec8-tickers div {
+      display:flex;
+      gap:10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sec8-tickers div p{
+      color:white;
+      width:250px;
+      font-size:15px;
+    }
+    .tick-img {
+      size: fixed;
+      height:21px;
+    }
+    .sec8-lg-boxes {
+     display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:15px;
+
+    }
+    .sec8-lg-box1 {
+      background:#013437;
+      width:300px;
+      border-radius: 10px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      padding:20px 5px;
+    }
+
+    .sec8-lg-box2 {
+      background:#013437;
+      width:300px;
+      border-radius: 10px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      padding:20px 5px;
+    }
+    .sec8-lg-upper p {
+      color:#2df8c5;
+      }
+
+      .sec8-lg-middle p {
+      color:white;
+      font-size:14px;
+      font-weight: 500;
+      }
+
+     .sec8-lg-lower p {
+      color:white;
+      font-size:14px;
+      font-weight: 500;
+      }
+      .sec8-or {
+        background:#2df8c5;
+        border-radius:40px;
+        padding:10px 10px;
+        display: inline-block;
+        height:50px;
+      }
+      .sec8-or p {
+        font-weight:900;
+        font-size: 17px;
+        color:#013449;
+      }
+
+      .sec8-r-boxes {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        border-radius:10px;
+        margin-top:15px;
+      }
+      .sec8-r-boxes div {
+        width:410px;
+        background:#013437;
+        display:flex;
+        justify-content:start;
+        padding:7px 7px;
+        border-radius:15px;
+      }
+
+      .sec8-r-boxes div div {
+        display:flex;
+        flex-direction: column;
+        margin-right:100px;
+      }
+     .lg-img {
+      size:fixed;
+      height:30px;
+      margin-top:4px;
+     }
+
+     .sec8-r-boxes-p :nth-child(1) {
+      color:rgb(172, 172, 172);
+      font-size:14px;
+      font-weight: 600;
+     }
+
+     .sec8-r-boxes-p :nth-child(2) {
+      color:white;
+      font-size:17px;
+      font-weight: 700;
+     }
+     .sec8-btns {
+      display:flex;
+      flex-direction: column;
+      gap:13px;
+      margin-top:15px;
+     }
+     .sec8-btns div{
+      display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; 
+     }
+
+     .sec8-btns button {
+      background:red;
+      padding:14px 150px;
+      border-radius:10px;
+     }
+     .sec8-btn1 button {
+      background:none;
+      border-style:solid;
+      border-width:2px;
+      border-color:white;
+      color:White;
+      font-size:17px;
+      font-weight:500;
+
+     }
+     .sec8-btn2 button {
+      background:#ffd500;
+      color:black;
+      font-size:17px;
+      font-weight:500;
+      box-shadow: #ffd500;
+     }
+
+     .sec8-mg-boxes {
+      display:flex;
+      background:#013437;
+      width:650px;
+      gap:14px;
+      padding:14px 14px;
+      margin-top:15px;
+     }
+     .sec8-mg-boxes div {
+      background:#004246;
+      width:200px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      padding:17px 12px;
+     }
+
+     .sec8-mg-boxes div p{
+    color:white;
+    font-size:17px;
+    font-weight: 400;
+     }
+    
+
+     .section-11 {
+    display:flex;
+    gap:40px;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+     }
+     .sec11-main {
+      display:flex;
+      border:none;
+      box-shadow: none;
+     }
+     .sec11-main-p {
+      padding:70px 20px;
+      background:#2df8c5;
+      border-radius:60px;
+      width:530px;
+     }
+     .sec11-main-p p{
+      font-weight:500;
+      font-size:15px;
+     }
+     .sec11-img-area {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     }
+
+     .sec11-img-area :nth-child(1)
+     {
+      border:none;
+      border-radius: 0;
+      width:80px;
+     }
+     .sec11-img-t-area :nth-child(1)
+     {
+      width:100px;
+     }
+
+     .sec11-img-t-area :nth-child(2)
+     {
+      font-size: 17px;
+     }
+
+     .sec11-img-t-area :nth-child(3)
+     {
+      width:110px;
+     }
+
+     .sec11-bar {
+      margin-left:200px;
+      margin-top:50px;
+     }
+     .upper-h3 {
+      width:400px;
+      margin-top:80px;
+     }
+     .lower-p3 {
+      width:700px;
+      margin-top:30px;
+     }
+     .card13 {
+      background:#004246;
+      height:190px;
+      padding:10px 10px;
+      border-radius:20px;
+     }
+     .card13 p {
+      color:white;
+      margin-top:20px;
+     }
+     .sec13-img {
+      width:60px;
+     }
+     .section-16 {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:30px;
+     }
+     .section-15 {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+     }
+     .sec15-main {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:#2df8c5;
+      padding:25px 140px;
+      border-radius:40px;
+     }
+     .sec15-header {
+      width:650px;
+     }
+     .sec15-header p{
+      font-size: 28px;
+      font-weight: 630;
+      color:black;
+     }
+     .sec15-btns {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      gap:10px;
+      margin-top:20px;
+     }
+     .sec15-btns button {
+      border-style: solid;
+      border-width:2px;
+      border-color:black;
+      padding:12px 14px;
+      color:black;
+      background:#2df8c5;
+      font-weight: 500;
+      font-size: 18px;
+      border-radius:10px;
+     }
+     .sec15-btns button:hover {
+      background:#07634c;
+      color:#2df8c5;
+     } 
+     .section-18 {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:60px;
+     }
+     .section-17 {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:100px;
+     }
+
+     .section-19
+     {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:60px;
+     }
+     .sec19-main {
+      display:flex;
+      justify-content: space-between;
+      background:#2df8c5;
+      width:900px;
+      border-radius:20px;
+     }
+     .sec19-header {
+      width:400px;
+      margin-top:30px;
+      margin-left:60px;
+     }
+     .sec19-header p{
+      font-size:40px;
+      color:black;
+      font-weight: 700;
+     }
+     .sec19-btn {
+      border-style: solid;
+      border-width:2px;
+      border-color:black;
+      padding:12px 14px;
+      color:black;
+      background:#2df8c5;
+      font-weight: 500;
+      font-size: 18px;
+      border-radius:10px;
+      margin-top:20px;
+      margin-left:60px;
+     }
+     .sec19-btn:hover {
+      background:#07634c;
+      color:#2df8c5;
+     } 
+     .sec19-img {
+      position:relative;
+      z-index:10;
+      right:80px;
+      top:30px;
+     }
+
+     .section-20{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:60px;
+     }
+
+     .section-21 {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:60px;
+     }
+
+     .last-section {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:60px;
+      background:#2df8c5;
+     }
+     .sec2-cards {
+      display:flex;
+      overflow-x: hidden;
+     }
+     .sec2-card {
+      width:250px;
+      padding:20px 50px;
+      border-radius:10px;
+     }
+     .sec2-main1 {
+      width:1200px;
+      margin-left:40px;
+     }
+
+     .sec2-main2 {
+      width:1200px;
+     }
+
+     .section-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     }
+     .sec2-img {
+      width:30px;
+      margin-left:40px;
+     }
+     .main-logo {
+      width:130px;
+     }
+    </style>
+
+</head>
+<body class="bg-white overflow-x-hidden">
+
+
+    <!-- Banner -->
+    <div class="banner h-11 flex items-center justify-center text-black text-lg ">
+        <img src="Left.webp" alt="Left Decoration" class="left">
+        <span>Upskill now & <strong>bag top tech roles in 2024</strong> | Get up to <strong>₹50,000 scholarship</strong> <a href="#" class="underline">Apply Now</a></span>
+        <img src="Right.webp" alt="Right Decoration" class="right">
+    </div>
+    
+<!-- Navbar -->
+<nav class="fixed bg-white py-4 shadow">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Logo and Website Name -->
+        <div class="flex items-center space-x-2">
+       <img class = "main-logo" src = "Crio_Dark.webp">
+        </div>
+        <!-- Navbar Options -->
+        <div class="flex items-center space-x-4">
+            <!-- Programs Dropdown -->
+            <div class="relative dropdown">
+                <button class="text-gray-800 hover:text-gray-600 focus:outline-none">Programs</button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 dropdown-menu hidden">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Program 1</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Program 2</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Program 3</a>
+                </div>
+            </div>
+            <!-- Other Links -->
+            <a href="#" class="text-gray-800 hover:text-gray-600">Hire from Crio</a>
+            <a href="#" class="text-gray-800 hover:text-gray-600">Projects</a>
+            <a href="#" class="text-gray-800 hover:text-gray-600">Blog</a>
+            <!-- Placements Dropdown -->
+            <div class="relative dropdown">
+                <button class="text-gray-800 hover:text-gray-600 focus:outline-none">Placements</button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 dropdown-menu hidden">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Placement 1</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Placement 2</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Placement 3</a>
+                </div>
+            </div>
+            <!-- Buttons -->
+            <a href="#" class="text-gray-800 border border-gray-800 px-4 py-2 rounded hover:bg-gray-100">Sign In</a>
+            <a href="#" class="bg-customYellow text-black px-4 py-2 rounded hover:bg-yellow-600">Book Your Free Trial, Now</a>
+        </div>
+    </div>
+</nav>
+
+
+
+    <!-- Main Content -->
+    <section class="container mx-auto px-4 py flex flex-col md:flex-row items-center justify-between ml-[100px] mb">
+        <!-- Left Side Content -->
+        <div class="md:w-1/2 ">
+            <h1 class="text-5xl font-bold text-gray-900 leading-tight">
+                Learn Like You Would<br>
+                At India’s Top Tech<br> Companies.
+            </h1>
+            <p class="mt-4  text-gray-600 text-2xl">
+                Work-experience based learning programs to land your dream tech job
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-600">
+                <li><strong class="text-black">Build</strong> professional projects like the top 1% tech professionals.</li>
+                <li><strong class="text-black">Master</strong> the latest Fullstack/Backend/Automation tech with real work-ex.</li>
+                <li><strong class="text-black">Crack</strong> your dream role at the best tech companies</li>
+            </ul>
+            <div class="flex items-center mt-4">
+                <div class=" flex bg-gbtn h-[28px] w-[28px] items-center justify-center rounded-full mr-2">
+                    <svg class="h-4 w-4 text-green-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path fill="currentColor" d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/>
+                    </svg>
+                </div>
+                <p class=" text-gbtn font-bold text-lg">Upskill with Crio</p>
+            </div>
+            <div class="flex items-center mt-6 space-x-4 ml-4">
+                <a href="#" class="border-2 border-black text-black px-4 py-2 rounded text-lg hover:bg-gray-100">Explore Our Program ></a>
+                <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now ></a>
+            </div>
+        </div>
+        <!-- Right Side Image -->
+        <div class="mt-10 mr-10">
+            <img src="Homepage_Hero_Image.webp" alt="Learning Illustration" class="w-100 h-auto object-cover">
+        </div>
+    </section>
+    <div class="container mx-auto  flex flex-col items-start space-y-8 ">
+        <div class="flex flex-row w-full max-w-4xl ml-20">
+          <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+            <p class="text-xl font-bold text-gray-800">95%</p>
+            <p class="text-sm text-gray-500 text-center">placed within 9 months of graduation</p>
+          </div>
+          <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+            <p class="text-xl font-bold text-gray-800">10 LPA</p>
+            <p class="text-sm text-gray-500 text-center">average dream job CTC</p>
+          </div>
+          <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+            <p class="text-xl font-bold text-gray-800">21 LPA</p>
+            <p class="text-sm text-gray-500 text-center">average super-dream job CTC</p>
+          </div>
+          <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+            <p class="text-xl font-bold text-gray-800">1000+</p>
+            <p class="text-sm text-gray-500 text-center">Hiring Partners</p>
+          </div>
+          <div class="flex flex-col items-center w-1/6 px-3 py-5 bg-[#f2fbf7]">
+            <p class="text-xl font-bold text-gray-800">81%</p>
+            <p class="text-sm text-gray-500 text-center">average salary hikes</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+<!-- Section 2-->
+<section class="section-2 py-12">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Crio Grads Have Cracked Their Dream Careers In</h2>
+      <div class=" sec2-main1 sec2-cards flex space-x-4 overflow-x-auto scrollbar-hide px-4 mt-10 ml-10">
+        <!-- Card Template - Card 1 -->
+        <div class=" sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center ">
+          <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+          <p class="font-semibold">Shweta Gupta</p>
+          <p class="text-gray-600">is in</p>
+          <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+        </div>
+        <!-- Card Template - Card 2 -->
+        <div class=" sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+          <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+          <p class="font-semibold">Manya Gupta</p>
+          <p class="text-gray-600">is in</p>
+          <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+        </div>
+        <!-- Add more cards as needed -->
+
+        <div class=" sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+          <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+          <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+      </div>
+    </div>
+
+
+
+    <!--Lower -->
+     
+    <div class="sec2-main2 flex space-x-4 overflow-x-auto scrollbar-hide px-4 mt-10 ml-10">
+        <!-- Card Template - Card 1 -->
+        <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+          <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+          <p class="font-semibold">Shweta Gupta</p>
+          <p class="text-gray-600">is in</p>
+          <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+        </div>
+        <!-- Card Template - Card 2 -->
+        <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+          <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+          <p class="font-semibold">Manya Gupta</p>
+          <p class="text-gray-600">is in</p>
+          <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+        </div>
+        <!-- Add more cards as needed -->
+
+        <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+          <div class="sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+          <div class=" sec2-card flex-none bg-[#f2fbf7] rounded-lg  p-4 text-center w-56">
+            <img class = "sec2-img" src="Zaheer_1_153633d210.webp">
+            <p class="font-semibold">Manya Gupta</p>
+            <p class="text-gray-600">is in</p>
+            <img src="pngegg.png" alt="Meesho" class="mx-auto mt-2 w-20 h-10">
+          </div>
+
+
+
+
+          
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 3 -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto text-center flex flex-col items-center">
+        <div class="flex items-center mt-6 space-x-4 ml-4">
+            <a href="#" class="border-2 border-black text-black px-4 py-2 rounded text-lg hover:bg-gray-100">Get Our placement Stats &gt;</a>
+            <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+        </div>
+      <div class=" upper-h mb-4 mt-10 ">
+        <h2 class="text-2xl font-bold">Modern Work Experience-Based Learning Approach</h2>
+      </div>
+      <div class="lower-p mt-5">
+        <p class="text-gray-700">At Crio, you learn and grow exactly how you would on a real job. You will start from the fundamentals, receive support from our mentors and community, and <span class="font-semibold">build your way to the top</span> through professional work-like Full-stack and Backend web development projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+
+  <section class=" section-4 bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="card text-center bg-[#f2fbf7]">
+      <div class="card-header">Guided Project</div>
+      <img src="CardTwo.webp" alt="Project Image" class="w-full h-48 object-contain mt-4 mb-4">
+      <h3 class="text-xl font-bold mb-2">Work like a Frontend Developer at AirBnB</h3>
+      <p class="text-gray-700 mb-4">Build a highly responsive frontend for a travel app.</p>
+      <div class=" tags flex justify-center flex-wrap">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">React JS</span>
+      </div>
+    </div>
+
+    <div class="card text-center bg-[#f2fbf7]">
+        <div class="card-header">Guided Project</div>
+        <img src="CardSix.webp" alt="Project Image" class="w-full h-48 object-contain mt-4 mb-4">
+        <h3 class="text-xl font-bold mb-2">Work like a Frontend Developer at AirBnB</h3>
+        <p class="text-gray-700 mb-4">Build a highly responsive frontend for a travel app.</p>
+        <div class=" tags flex justify-center flex-wrap">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">React JS</span>
+        </div>
+      </div>
+
+      <div class="card text-center bg-[#f2fbf7] ">
+        <div class="card-header">Guided Project</div>
+        <img src="CardOne.webp" alt="Project Image" class="w-full h-48 object-contain mt-4 mb-4">
+        <h3 class="text-xl font-bold mb-2">Work like a Frontend Developer at AirBnB</h3>
+        <p class="text-gray-700 mb-4">Build a highly responsive frontend for a travel app.</p>
+        <div class=" tags flex justify-center flex-wrap">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">React JS</span>
+        </div>
+      </div>
+
+
+
+
+  
+</section>
+  
+
+  <!-- Section 5 -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto text-center flex flex-col items-center">
+        <div class="flex items-center mt-6 space-x-4 ml-4">
+           
+            <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+        </div>
+      <div class=" upper-h1 mb-4 mt-10 ">
+        <h2 class="text-2xl font-bold">An All-Round Effective Way To Supercharge Your Tech Career</h2>
+      </div>
+      <div class="lower-p1 mt-5">
+        <p class="text-gray-700"><strong>Hands-on, work experience-based learning</strong> is at the heart of everything you do at Crio. Build software projects like the top 1% Tech Professionals and <strong>learn all the skills</strong> you need to <strong>land the best</strong> Fullstack/Backend Developers or SDET Jobs.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 6 -->
+
+ 
+  <section class="section-6  mx-auto p-4">
+    <div class="section6-cards grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+      <!-- Card 1 -->
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAD+0lEQVQ4y4WVbWhbVRjHn9sOUWd1RQVhoCJ+6kCHW11t06TNS9Oa9M25aU03F+fWNdTOpLknud2a3JsmTZM6Vtp1Dh3zwxARRAW7DyLWKaifBCkiiKKi4obbmtvXFd3uX8+5N3GtAz8cEs55zu/+n+c8539I02XSdLlKLcjTakFe0XQZaoEZmi4bms5ws6Gaa4Za4LFiz7Rg6IyKMF0tWMEFuRgohjW3dsyV1qxYEaNzFlnK+OJqEabNMyO1wAy+MXFZRvKKCeHw1AJDZjkm1pMCJLJZtaDTZEo2laXmmTG8FDMSl6IYvDCA9HIM+esKctcU8Z9/jM+HZvsR/y2C3JJspHQuQkBF+qSZaXAYjvweMezjXXiIPYvbd/qw5fVetL17AHUT3aga3IX7gn7c5veCHG5sOhVB668ZHL0sG8W6qzoD8Tok52RkVmJGz1d9ILsbZHOBahygagfoERtoqx1kawL52iG1d4DqXaApBXT+VdTMpjGyEC2lT/zEOHDkatwIfhECOT2g9k6UvRDExoEQ7tSiqBhRUJlXcO/kECpYSCjccOYo6LOT2PZ1Btkbgbx+vOjZ1TgCM4dANjfu13qw9VQ/Nid78PCxELaP70PN+B7c0+0zVbuaUH42CTp/EnXfpJFbvAlw9M84nj53QAC9rB49o9VoVhx4Mt2EB0Z6selQAFKjG+TygtxelL89DPpkCo3fpjC2OGAkSikXzLbI/aWg7Z39oDo36MUgHo20oO+Vx7FtXy2ktg6Q1wdqcIMaPSBPM8rfy4JmTsD7nYa8BeSXQQATV2Tkrynwng2CapzYPVyP3hN2PBb1gzq7cOvzXWZtnU2gBg/I24Lyc3nQzCRav1fXpsyPmjfv2HUFztf2gp5w465gJypTEVRk47g7x7Ax3CPqVgL6/Sj78BhoZgI7f0xitHQo6xTaJgKgWg8odhCSzw+yO0E77KDaBhPER20jqLUVZR8fB306ied+TtxwyibQsA7F2D7aBap2otzvA9mcoiclVxMkjxdlzc0oe6oVUlcnpP49kN4YBH0whr2/DJWAvKdN4JxoG2PH8QDI0QLa3QFp/zOgvm5QNAgaOghKh0C5lyCNH8YtUy/jjsk+PPhWGOELDMPz4vpBMxWaUnn7HPkjavg+D6Py9GFs4JtOh7H5zTC2vB9G3UcR+L6MIDA7gL6folAumS5k3WVxwuLqrTeH3FVmxC7K6P1hAMrFqGip9LyM3DJDfoUhu8SQWWTgd9+0L9M7LWEr/7Evnj4HZxaZYW0SSvh8Ys78tWyu6Jv/2pdu2lfJYC2TFYHJ9aa6xmxFitCEuuJHGWcIgy1CxROgWoHq/z0BZoxI09pbpf3zBPwNdircxrlS7swAAAAASUVORK5CYII=" alt="Project Image 1" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Learn by Working like Tech Professionals</h3>
+        <p class="text-gray-700 text-sm mb-4">Learn Full Stack Development, Backend Development, QA Automation through an immersive project-based curriculum focused on practical developer skills and real-world scenarios.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAADO0lEQVQ4y3WVS0wTQRjHP4SbJmpMPBk8+IRYRUPiW5FCCxwMiAkxUfAVHpZq0jDTNiLdpSgI8WriBT14MfHgARMT4tGLRsVoNJp48K0JdIZWK6L2rzuz3d0iHia72Znvv7/vsf8lUzIyJSs3BBszBMuaksEQPGdKljMlx3zL0Hs5Q1hnVcyY0pCc8mLSCRDWYSUK61qwhPvcErNEdQyH1mDlZJGptwo2o6k0Yb993yei6BUxdVWCKTcDmzBnSCtWaYyRRuZ6Qx3UqZwVcSREFJdkGJdlJ0bkGZybjiP5LYpEyiXUcbo8lhaZ7gYUobpGcXX6BJ5l9kJkKyC/bYKYqcDYhwaEnp7G0GwMyTRXtE6sIuUg7wOVkowhOdWFL+mNwM81SGd9amWyPvz6UYaW83tQ1n8YvZ8jSGZ4YS0ly5HdsXxd0Cc4ln9k8GVOof9xEFuO7UXr4C7IjA+ADwPXt4FW+bE2cgDmtN11N+UcOaMgGAYkR3iSgca7QDfbQbwFtKEGK9sDeJ/ZDGA9jlzcDdoaxAJ/LToeduN8VtV0fkG1JMfxByGsSzRjYWs9FoX2g+6eQpkIoXeiDkvq/aCqAIpqAuiaCP9fUA+smkNc+B5T9Wl71I3FT86APnHQix5QWzNody1ohx+loSb0px2Q+QlNm/BcimFIctSloqC3DEVvelAUaUbJ9mpQVS2Kg0EvndOUfwmFM19KfMXrCOhlBAvudIL21Soxqg7g0HiHGp3EFPt/U+aSmmmO1fe7QbfbUTzahpKmetBOPyqHDmHkdxx9k8wL4QoargnkHEGpUy990wP6EgXd60ZRIKgoG2+dxMXZGPpcOs8ccotQfXKFgoIhITmWvYqAXkVQfLsDJZZgZTVqRtswbBFOecrjmIRFqN1DfTYeS1IdbJwIY2niIOhIA6i5DlS5D1VXWjGS0ykXOo796XnNwd50RAczHPF3EdTcOIqd11rRcOsEws9PY+Br1CtWaA5e+7KdwzmYEAzJTBSDMzEMzcQwPBvPi9kvt+1L2PYltX3NMViXMF9Ta9aspeqW8jRDOM2wvEAagiuDzYuqX4Ah9UFDOrSY+wJFqM+oNO3YcvPvL+APxlg0nB8nrB4AAAAASUVORK5CYII=" alt="Project Image 2" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Gain Work-ex on Problems Given by Real Tech Companies</h3>
+        <p class="text-gray-700 text-sm mb-4">Gain the work experience of building professional software products for India’s top tech companies like CRED, Playment, Jumbotail, Vicara, and others.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAADu0lEQVQ4y22V3WscVRjG3zWt6JXgjV6IVbxpVmLXShG6lYS0SWrSSsU1m2YDKW1NSNJKzO6Z2d0k7ke6MYkfWCSChV4p+A9EiwiCxRsvarFgQUjTNs1imzSZs5ud2bHU8+g5szM7W7xYZoY557fP+77PeYZynFGOs2DWYEtZg1k5zpA1NJHjTOS4hv/7ZZ13ImvItWrPkmJwjVwYr2+QixVU3mOGJ9Q1Y2hyswN0QPLe+VPnHZcskspqi+yc4cGUwoyhI2lMYspIo8A1ZHygrMFchSLLmV1jLJEjWT0oSA2GKSOJOT6O78q9uMBjGN5gmK/omNnWkNnylLpgUXu2KOdJd5TlOcO0kcRiaQS3K68D1ZdwfrML9KeG1kunkVr9AAUr6ZVfL1sq1UBuc93euf36o9IK22qGbbUgUoyBipOgL/rx9NARnPhtDIWKrpQ29JIzQdn6NIUD0zHLJ7Bh7oVlvYz1Sgi7VkdBazp2Jt4BhQ/imYm3/WV7QFk6+aaLukIdP5d78NBqxmUeRmCNgb4aRGBfO2j/ITzVdwTT9xPIl7yJPwp0QNIqeZ5A2kjjY+MszEoIn93vBt1IounyKGghBmrtwNFvT2LWTuLDzYbhNAIdGMOkkcKF0nsomvsgqkH0/hVzgMUEaF3Hzu+HEf1pGAVT9xT6TC6BdRPL6X7Ox7Bu7oVtBbFuhvCC7N8KQ+BGHLQcB93VQOdj2LMQxfQmc6H+kuu9k8DfK+2wrKCa7i+lMAI346CVBEheJXSV4bEr74Oih/HaYr9S2lDyo6Vumy3YNPcA1WZ8utENWtbRtDzhqJPAWwnQ7QQen4xgR/+bOHX1DGYtXdSmrhQKOYiUkRY/lo/BqjQroLCD6NuIgdbSaLqnqf7RHQZaiSNwbRxPTkcQOH4Yb3w9iDk7KWqedIBOubq4brYB2I3qg1ewVnoVL14bAv0wiqZvToI+iYESEdDAUdChTlBnB6inA7vnozi3rfuG4h7wko6Ld46L8S8PIDxyAM9F20FtnSDpvZY2UKgNgf0H8URXF5498RaC6XcRXhzAqStjYqZct47soeUevdRWSgz8Oi6en+jFjp5u7Bo5htBMH9ovDiJyaQjDV88iWYyrU3LO1LHwMCVk/9wp57hm+eJLs/Ocifm/dXxU1cXUvbhaJA288E8Kcw+SKFg6pBrluy0mpLEzWwpm10pW8aUC1vGiiiYlPV/2ntWJyDibvXD1Hzk3YLOGpgLWhS75s9HnrYak9j4BhiaDVWVgbW8w998n4F/mCjHfK/ayHwAAAABJRU5ErkJggg==" alt="Project Image 3" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Learn From Seasoned Industry Professionals in Real Time</h3>
+        <p class="text-gray-700 text-sm mb-4">Participate in activity-based live working sessions facilitated by industry mentors from companies like Microsoft, Flipkart, Nilensto.</p>
+      </div>
+
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAD0klEQVQ4y32VXUwcVRiGP9h4y4Xx3sREErdduiFporVJq0lbJYjaaomEWqioBSosuzuz27/sLu3yY+INadX40zRGExO9sAartbRF7kxUDLViAm2X0poiYWfYheVHOY/Omd0VWuvFNznJnPc973fmnGckYRuSsA1v3DL645aRS9gGcctUCdtQCdvkvyruvlNxy5mrNf3awzalYGYXJ1vuRHesBcTSBrEZd+wsqMsqLlyYZzte4iTLixedVHHLMTZUwjK0cXLepGchwpvLEY5lTWKWyVErqmJ2JJ/QMTUX86b9sqZNy1Cddlh1WmGd4thchNbfOth96QBVZ5oJpkIkswZ9dgu9M20cn4uoTh3C3R7HS1btGc6qB61DRK1DxDNRqj9+mb2f1/L2WC1vfbWVc6ObmVx6DPWnlxPDT7P5kkmn3k+dTptK0cyKqB4rwKez9VzIPsdPmScZueZnYcXPiloPrGN5eR3pjA/+8tL3ww4kEWDLQICuOVPF3JaVuG0aHLYOqqFMFSu5chZzj5Cb97K04mPyjwquT/nJLFSQzVWwsOQDynl3eDuS7MB/pp1ktvjFlRS+2lEryvfZ7czPe7FyfnJLPnK59Zw+u5EP+zdiZ3ykpv18M/4ofb9spfKLPUh3O5VfBu42dBNGGcltg6Vy0pkKJmb8fDK8iYaTT1DzzlNUfP0S919sQgZbkR87kPNBpPsNNtxpqM+Wc9bsKO1X6tg7VEXlxTrKBl+j5OzryIkm5P39yM9BZNJEJgxKb4e577sOJHkPQ2dDu2ZNHho3kBEDGTOQCRNJhfGcbMBz6lVKU2FKroWQ8RAyGcYz2IF03cNQH2DbZMPvYSQVwpMKIY44FUYuB5Ff8+OrIWQshNwI4xkKIskD/2/ou+mKdJKr+TSO0US+bhnIbROZNvGcDyC9bfj7O+4yVHlD5dMJw5TcyIunTOSmodOWXA5QOtBCyUdNSM8epGEXsq8e72dta8+h89B7aJvKez2EjAbxjAQo/baFktOvIF31SMuLyK5nkR3VyLZqSp+poaxxJw9Gatk92EpyPqLi6bUtq+OzJk2poHqgux6pqflXXFNDWcNOHo7V8fgHjTx/bj/NV9o5PBXWsEjOFelUuHoOHPTFVt1ZUx25FVJbTu1j03uNvDDQTMtoO0emw3RmTHqXo7qS8xE6Z11NLL2WjeKCVbNwMeZcw6xJ92JU9S5HVe/SGrFmoq60S5hCd0V82S6+NGBXQVUVgKqhmi4ClDvBm3BZWACzHbdMDdiCaf/q9lcxrmi05hfgkN3FVi6v9Sb++QX8DePKJ3rGr/mXAAAAAElFTkSuQmCC" alt="Project Image 3" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Learn From Seasoned Industry Professionals in Real Time</h3>
+        <p class="text-gray-700 text-sm mb-4">Participate in activity-based live working sessions facilitated by industry mentors from companies like Microsoft, Flipkart, Nilensto.</p>
+      </div>
+
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAD7UlEQVQ4y21VS2xbRRSdxI0QICFF2bBjiZr6QwOBNpBgN7UbUiIVCghTKa1wUKr0o7R+M7aLar/nxE2a8hEsKrWr7tgEVpZQQWwQFQIWLCi/qKljmqalsfOef7HrkDkwM8+OI7EYXY/n3TPn/s4Qw6LEsGi3btK0btJ1w6LQTcYNi3LDYmgs3aRNq5vyjNu/hU9aYliMNMCsFsfGh9vXGkUiTxHPKWtfIL81TOlnCSxiMxOHNQmmHHk8T3liTbFKFhlSlQhmHkYxtxnDTC3KmxdbIhpW0xWZNFGUFTOjwHiqEuHC8dJmDLMPo5guUpx/EMbJm6fxztfj8F4dxch8CHqRIaFA7fAlxjppgllMhMOFY/CrcfivHYUrGURX6HW0Dx+EIxAA6feDOL14fHgIF3IaLhYZkjZTCWoxCIZc5OTiRoz7royC9A2CvOwH6d2Hx/Z78dKJfvSdGADZG0CH34+2w8PoCL8BfzYMzwrF2w8oZizGExKUcgkYz1ORG+67Ogry3D4Q3wF8OL8HZsWD2oYLCyu7MX+9B6d/fhXkd4r2pTDI7TDIrTCG71PMFRiP29WXIQuGs/Uo3ky/B9K3H48c8OPX7DP4hzthlt0oVV0AdsGbC4FkInBkwmjLaCAZDaOrWwwloIhfVPNCNYKxHyZABgLoOjSI5ZwH5aoL+bIbqHfj27U+kN/OgGQ1xe62hvaMhlN5iumtnuSNomCqFAHNTIL4huAKeSWzQsWNat2FX5Z244WPXgFJBeH4bgLkDgVZDOPRJQ3nTIrk/wEmCwx6XoNjZARDtB/VDZcM9V7ejYnPfOhcOAXy5XHsuHYU5O+IzN+Tf2lItDT4NkBhUyWKJ44dxrszewG4UK658EfWA/fHI+hYmITjkyNo+/4k2myGTy9rmNo+XVuAIo9z9QieYkG8f6UXgBP5khuVihMvfvMWyE9nsOOGCrdd5HAxjOdXNMxazQa3i2KpjRi3D3gMez4dxeX5HsmwVHLiz3IvupYnQZYo2pepKoio8GIYg/coLhUY4mZTSARDtRGAs/UYDn0eQvpGD2rcA6zvxOzqQZBbUZDFszJvAtCR0dCZ1TCWo0g1GTIYqm3sHKxRTFWifOLH41i6swub9Z2yygN3x9CZjeDZuxoC9ymOrFJMCtURndEythLDHj0pDob6gydzZ/n14mv4ohjEZWsckTWV4xmLiYmQdrpF6uwKN0DXpXzJjcVqhn0QM89xsc6bUUxZqgNEewhWjYnQm6IgbU1hKPlSArulyDxpaRBLqbdU8BaxZXKJM0Mqe4Mts3STSYFtgDafAHWrfAaUY8tTYDPhAkxXF67bvt3Gf0/Av55KLHgyYx31AAAAAElFTkSuQmCC" alt="Project Image 3" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Learn From Seasoned Industry Professionals in Real Time</h3>
+        <p class="text-gray-700 text-sm mb-4">Participate in activity-based live working sessions facilitated by industry mentors from companies like Microsoft, Flipkart, Nilensto.</p>
+      </div>
+
+      <div class="card2-container bg-green-50 rounded-lg p-6 text-center shadow-md">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAADoElEQVQ4y22VzW8bRRiHJyVIwI1yQBX/ACTu5kAQ0DZQ2kDrQBEqCgnBtKAWUqiJaOxZ2wHi3YTUaW9UlThxQEIFCU5VBAcOoHIClQNSKR8NTUqTpliJd5zEGzdE+8Dshz8Ch9F65Jlnfu+87/sbYSspbCXbLEdOWY50bSWxHNOzlfRsZfJ/wwr+8yxHr/X3TPkMZYoIpmqLNcyR4W+JvWlYjl4XzpUZHOr4a5VmCa0s3Fy1HX2yxFI+1BtTacK5P8ZUDRpEECj0LCWrIWNKBJL9ib9IL9bK8ipDzhnh3VIGu5TGKklGSjneU9kAWgoU+kAnuB7NEtEpUbiWkoypDOOLb/PFYi8XnT38pnbwi9rJBRXng8VjjC7nmFg1yS/Vww6UmojgFH0PQbi2VrbwBnOqk3X3ftbcNly3nYrbzi33AZxVg/yF50leSXFqPUu+rtRniEhd3pHeZNmkdy6FmB7GLh7AW2v3AaVVg5U1g+U1g/WNGD/9up17B/bT//UxClUfWlMpomyOl01SxTR3Tg8jZiRifoR08SAbGzEq6wYLTgfX/upg2TWobhh0JbsQu/Yz9PNbTFQyXqRUK2TUkZwum3RfTyGuprlNQ8+/jpgxeezjZ5n9vZ1z3zxE7qMdQIwVdzs97+xGxPbSdeYlTv2d8/R9WmHI5JXJSUdiXEshZtO0XD6BOD0QgL8cov9yL5VKjKWywUrVYKHUwX193YjOvRjWC0y4GU9nvQ50TCaV5MHracTVFFtm0oh5iZhJ0XojjZjN8uLCAKuVGNDG5KePIHbuQzy8h11nEs0Kw4RQKJskihLxRwoxk6ZFf/W4Mhwonc7SW0xwca6Tew7tQ+x+CvHEkwz+mOSk23SHQVL0mFAmjy+E0D8lLTdNRDj8A+Yz3H22jzsO9yD64jx6NlHLcsiol43/DaGHipJt3x1HfP4a4rOjiHNHEPMmrd8nuf3oAVoP97D1xHPkbqYYXzabGkME7VYvzih860aK+CevsrXvabZ0ddPy1SCi0MddL8cRiR6eOX+ESa1u6T+F7btHHRreqb1sMnkry+iSJHlpiOOXknR+OIDoj7MtezACEfZyvfUazWFTowdtVTZ5v5LRxUvBzdL/7SCv/PCmTkTUIc3m0GhfVmRfTpOB+s6SD+qMwlqWiVW/7rwGIdXQeH37ajJYO3ScuuEGoEbVYYmEiawZs7Ic0zfYCOo/AT4sgDY9AY3QTRG44d42+98n4B8Omzlhg7/NbwAAAABJRU5ErkJggg==" alt="Project Image 3" class="card-img mx-auto mb-4">
+        <h3 class="text-lg font-semibold mb-2">Learn From Seasoned Industry Professionals in Real Time</h3>
+        <p class="text-gray-700 text-sm mb-4">Participate in activity-based live working sessions facilitated by industry mentors from companies like Microsoft, Flipkart, Nilensto.</p>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Section 7 -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto text-center flex flex-col items-center">
+            <div class="flex items-center mt-6 space-x-4 ml-4">
+               
+                <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+            </div>
+          <div class=" upper-h2 mb-4 mt-10 ">
+            <h2 class="text-2xl font-bold">Immersive Work Ex-Based
+                Programs To Crack Jobs At The
+                Fastest-Growing Companies</h2>
+          </div>
+          <div class="lower-p1 mt-5">
+            <p class="text-gray-700">Learn the skills you need to land a Fullstack/Backend Developers or SDET Job at a top product company.
+                <strong>Gain the work experience of professional developers </strong> working at Amazon, Netflix, AirBnB, Flipkart, and more, with continuous guidance and support from our mentors.</p>
+          </div>
+        </div>
+      </section>
+     
+      <!-- Section 8-->
+
+      <!-- Section 8 part 1-->
+         
+      <section class = "section-8">
+        <div class = "sec8-main">
+          <div class = "sec8-left">
+          <div class = "sec8-headings">
+            <img class = "sec8-main-img" src = "Fellowship.webp">
+            <div class = "sec8-header"><h3>Fellowship Program in Software Development</h3></div>
+            <div class = "sec8-headings-p"><p>Learn with real work experience and get guaranteed 
+              placement as a Full-Stack or Backend Developer at product-based companies.</p></div>
+          </div>
+
+          <div class = "sec8-tickers">
+            <div class = "first-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+            </div>
+              <p>
+                Project-led MERN or Backend Specialisation</p>
+            </div>
+
+            <div class = "second-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+            </div>
+              <p>
+                DS, Algo, and System Design curriculum</p>
+            </div>
+
+            <div class = "third-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+              </div>
+              <p>
+                
+APIs & Performance Testing using tools like Postman, Docker, Swagger</p>
+            </div>
+
+            <div class = "second-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+              </div>
+              <p>
+                
+DevOps & SDLC best practices - Using tools like CI/CD, Jenkins, Log 4j</p>
+            </div>
+          </div>
+
+          <div class = "sec8-lg-boxes">
+            <div class = "sec8-lg-box1">
+              <div class = "sec8-lg-upper">
+                <p>Full Stack Specialisation</p>
+              </div>
+
+              <div class = "sec8-lg-middle">
+                <p>7 Professional Projects to learn with real work-experience</p>
+              </div>
+
+              <div class = "sec8-lg-lower">
+                <p>(MongoDB, Express, React, NodeJS)</p>
+              </div>
+            </div>
+             
+            <div class = "sec8-or">
+              <p>OR</p>
+            </div>
+
+            <div class = "sec8-lg-box2">
+              <div class = "sec8-lg-upper">
+                <p>Backend Specialisation</p>
+              </div>
+         
+              <div class = "sec8-lg-middle">
+                <p>5 Professional projects to learn with real work-experience</p>
+              </div>
+
+              <div class = "sec8-lg-lower">
+                <p>(Core Java and Spring Boot )</p>
+              </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class = "sec8-right">
+          <div class = "sec8-r-boxes">
+            <div class = sec8-r-box1>
+              <img class = "lg-img" src = "lock.webp">
+              <div  class = "sec8-r-boxes-p">
+                <p>Trial Session</p>
+                <p>Free</p>
+              </div>
+            </div>
+  
+            <div class = sec8-r-box2>
+              <img class = "lg-img" src = "calendar.webp">
+              <div class = "sec8-r-boxes-p">
+                <p>Duration</p>
+                <p>9 months</p>
+              </div>
+            </div>
+  
+            <div class = sec8-r-box4>
+              <img class = "lg-img" src = "graduation.webp">
+              <div class = "sec8-r-boxes-p">
+                <p>Scholarships</p>
+                <p>Assured Scholarships</p>
+              </div>
+            </div>
+  
+            <div class = sec8-r-box4>
+              <img class = "lg-img" src = "suitcase.webp">
+              <div class = "sec8-r-boxes-p">
+                <p>Career Services</p>
+                <p>Placement Guarantee</p>
+              </div>
+            </div>
+          </div>
+
+        <div class = "sec8-btns">
+          <div class = "sec8-btn1">
+          <button>Learn More &gt;</button>
+        </div>
+        <div class = "sec8-btn2">
+          <button>Apply Now &gt;</button>
+          </div>
+        </div>
+        </div>
+        </div>
+      </section>
+
+
+      <!-- Section 8 part 2-->
+         
+      <section class = "section-8">
+        <div class = "sec8-main">
+          <div class = "sec8-left">
+          <div class = "sec8-headings">
+            <img class = "sec8-main-img" src = "QA.webp">
+            <div class = "sec8-header"><h3>Fellowship Program in QA Automation (SDET)</h3></div>
+            <div class = "sec8-headings-p"><p>Master QA Automation skills by working on projects 
+              like SDETs at top product-based companies and get guaranteed placement.</p></div>
+          </div>
+
+          <div class = "sec8-tickers">
+            <div class = "first-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+            </div>
+              <p>
+                
+Complete Web Automation using using tools like Selenium, Webdriver, Xpath</p>
+            </div>
+
+            <div class = "second-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+            </div>
+              <p>
+                Advance System Design, DS & Algo Curriculum</p>
+            </div>
+
+            <div class = "third-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+              </div>
+              <p>
+                
+                APIs & Performance Testing using tools like Postman, Docker, Swagger
+              </p>
+            </div>
+
+            <div class = "second-tick">
+              <div class = "tick-img">
+              <img src = "green_tick.webp">
+              </div>
+              <p>
+
+                DevOps & SDLC best practices - Using tools like CI/CD, Jenkins, Log 4j
+              </p>
+            </div>
+          </div>
+       <div class = "sec8-mg-boxes">
+        <div class = "sec8-mg-b1">
+          <p>3+ large scale professional test automation projects</p>
+        </div>
+
+        <div class = "sec8-mg-b2">
+          <p>45+ mini-learning modules</p>
+        </div>
+
+        <div class = "sec8-mg-b3">
+          <p>Learn Java, Selenium, TestNG, Cucumber, API, Perf Testing and more</p>
+        </div>
+       </div>
+        </div>
+
+        <div class = "sec8-right">
+        <div class = "sec8-r-boxes">
+          <div class = sec8-r-box1>
+            <img class = "lg-img" src = "lock.webp">
+            <div  class = "sec8-r-boxes-p">
+              <p>Trial Session</p>
+              <p>Free</p>
+            </div>
+          </div>
+
+          <div class = sec8-r-box2>
+            <img class = "lg-img" src = "calendar.webp">
+            <div class = "sec8-r-boxes-p">
+              <p>Duration</p>
+              <p>9 months</p>
+            </div>
+          </div>
+
+          <div class = sec8-r-box4>
+            <img class = "lg-img" src = "graduation.webp">
+            <div class = "sec8-r-boxes-p">
+              <p>Scholarships</p>
+              <p>Assured Scholarships</p>
+            </div>
+          </div>
+
+          <div class = sec8-r-box4>
+            <img class = "lg-img" src = "suitcase.webp">
+            <div class = "sec8-r-boxes-p">
+              <p>Career Services</p>
+              <p>Placement Guarantee</p>
+            </div>
+          </div>
+        </div>
+
+        <div class = "sec8-btns">
+          <div class = "sec8-btn1">
+          <button>Learn More &gt;</button>
+        </div>
+        <div class = "sec8-btn2">
+          <button>Apply Now &gt;</button>
+          </div>
+        </div>
+        </div>
+        </div>
+      </section>
+
+        <!-- Section 9 -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto text-center flex flex-col items-center">
+                
+              <div class=" upper-h2 mb-4 mt-10 ">
+                <h2 class="text-2xl font-bold">Work At Tech Unicorns,
+                    Soonicorns, Or MNCs</h2>
+              </div>
+              <div class="lower-p1 lower-p3 mt-5">
+                <p class="text-gray-700"><strong>Build your Github portfolio of projects</strong> and impress recruiters
+                    at unicorns, global MNCs, and hyper growth startups..</p>
+              </div>
+            </div>
+          </section>
+
+
+
+          <!--Section 10-->
+
+          <section class=" section-10 container mx-auto p-4">
+            <button class = "s-btn">Unicorn</button>
+            <div class="flex justify-center items-center mb-4">
+              <div class="relative">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-yellow-500 px-3 py-1 rounded-full text-white font-semibold">Unicorns</div>
+              </div>
+            </div>
+            <div class="slider-container">
+              <div id="prev" class="slider-btn slider-btn-left">❮</div>
+              <div class="slider">
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <!-- Add more icons as needed -->
+              </div>
+              <div id="next" class="slider-btn slider-btn-right">❯</div>
+            </div>
+          </section>
+
+          <section class="section-10 container mx-auto p-4">
+            <button class = "s-btn s-btn1">Hyper growth startups & Soonicorns</button>
+            <div class="flex justify-center items-center mb-4">
+              <div class="relative">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-yellow-500 px-3 py-1 rounded-full text-white font-semibold">Unicorns</div>
+              </div>
+            </div>
+            <div class="slider-container">
+              <div id="prev" class="slider-btn slider-btn-left">❮</div>
+              <div class="slider">
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <!-- Add more icons as needed -->
+              </div>
+              <div id="next" class="slider-btn slider-btn-right">❯</div>
+            </div>
+          </section>
+
+          <section class="section-10 container mx-auto p-4">
+            <button class = "s-btn s-btn2">Global Tech MNGs</button>
+            <div class="flex justify-center items-center mb-4">
+              <div class="relative">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-yellow-500 px-3 py-1 rounded-full text-white font-semibold">Unicorns</div>
+              </div>
+            </div>
+            <div class="slider-container">
+              <div id="prev" class="slider-btn slider-btn-left">❮</div>
+              <div class="slider">
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <div class="slider-item"><i class="fa-brands fa-stripe text-5xl"></i></div>
+                <!-- Add more icons as needed -->
+              </div>
+              <div id="next" class="slider-btn slider-btn-right">❯</div>
+            </div>
+          </section>
+
+
+       <!-- Section  11 -->
+
+       <section class=" section-11 w-full max-w-4xl mx-auto p-6">
+        <div class=" sec11-left flex flex-col lg:flex-row gap-6">
+            <div class=" sec11-main bg-teal-300 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div class = "sec11-main-p">
+                <p class="text-xl font-semibold text-gray-900 mb-4">"Their cutting edge platform and pedagogical methods are a class apart and help groom engineers not only on the technical skills but also the tools necessary for today's software development industry"</p>
+              </div>
+                <div class=" sec11-img-area flex items-center mt-4">
+                    <img src="Piyush.webp" alt="Piyush Goel" class="w-12 h-12 rounded-full">
+                    <div class="sec11-img-t-area ml-4 text-left">
+                        <p class="font-bold text-gray-900">Piyush Goel</p>
+                        <p class="text-gray-600">VP - Engineering</p>
+                        <img src="Capillary.webp" alt="Capillary" class="mt-1">
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class=" sec11-right flex flex-col lg:flex-row gap-6">
+            <div class=" sec11-main bg-teal-300 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <div class = "sec11-main-p">
+                <p class="text-xl font-semibold text-gray-900 mb-4">"Their cutting edge platform and pedagogical methods are a class apart and help groom engineers not only on the technical skills but also the tools necessary for today's software development industry"</p>
+              </div>
+                <div class=" sec11-img-area flex items-center mt-4">
+                    <img src="Ramesh.webp" alt="Piyush Goel" class="w-12 h-12 rounded-full">
+                    <div class="sec11-img-t-area ml-4 text-left">
+                        <p class="font-bold text-gray-900">Ramesh Kumar</p>
+                        <p class="text-gray-600">VP - Engineering</p>
+                        <img src="Jumbotail.webp" alt="Capillary" class="mt-1">
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+
+    <div class="sec11-bar container mx-auto  flex flex-col items-start space-y-8 ">
+      <div class="flex flex-row w-full max-w-4xl ml-20">
+        <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+          <p class="text-xl font-bold text-gray-800">95%</p>
+          <p class="text-sm text-gray-500 text-center">placed within 9 months of graduation</p>
+        </div>
+        <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+          <p class="text-xl font-bold text-gray-800">10 LPA</p>
+          <p class="text-sm text-gray-500 text-center">average dream job CTC</p>
+        </div>
+        <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+          <p class="text-xl font-bold text-gray-800">21 LPA</p>
+          <p class="text-sm text-gray-500 text-center">average super-dream job CTC</p>
+        </div>
+        <div class="flex flex-col items-center w-1/6 border-r border-gray-300 px-3 py-5 bg-[#f2fbf7]">
+          <p class="text-xl font-bold text-gray-800">1000+</p>
+          <p class="text-sm text-gray-500 text-center">Hiring Partners</p>
+        </div>
+        <div class="flex flex-col items-center w-1/6 px-3 py-5 bg-[#f2fbf7]">
+          <p class="text-xl font-bold text-gray-800">81%</p>
+          <p class="text-sm text-gray-500 text-center">average salary hikes</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Section 12 -->
+
+    <section class="py-12 bg-white">
+      <div class="container mx-auto text-center flex flex-col items-center">
+          <div class="flex items-center mt-6 space-x-4 ml-4">
+             
+              <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+          </div>
+        <div class=" upper-h2 upper-h3 mb-4 mt-10 ">
+          <h2 class="text-2xl font-bold">Prepare To Break Through
+            Into Top Tech Jobs
+            In The Market</h2>
+        </div>
+        <div class="lower-p1 lower-p3 mt-5">
+          <p class="text-gray-700">All of our program come with <strong>exclusive Career Services</strong> that will equip you to use your learnings and skills to ace your next interview or excel in your current role.</p>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 13-->
+
+    <section class="section-6  mx-auto p-4">
+      <div class="section6-cards section13-cards grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+        <!-- Card 1 -->
+        <div class="card2-container card13 bg-green-50 rounded-lg p-6 text-center shadow-md">
+          <img class = "sec13-img" src="PointSeven.webp">
+         <p>1:1 Career coaching Sessions with top industry professionals</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card2-container card13 bg-green-50 rounded-lg p-6 text-center shadow-md">
+          <img class = "sec13-img" src="PointOne.webp">
+        <p>Live mock interviews with Industry Experts</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card2-container card13 bg-green-50 rounded-lg p-6 text-center shadow-md">
+          <img class = "sec13-img" src="PointSix.webp">
+        <p>Series of mock assessments and detailed interview prep sprints to ace top tech jobs</p>
+        </div>
+  
+        <div class="card2-container card13 bg-green-50 rounded-lg p-6 text-center shadow-md">
+          <img class = "sec13-img" src="PointFour.webp">
+        <p>Expert guidance to get your profile (GitHub, LinkedIn, Resume) ready</p>
+        </div>
+  
+        <div class="card2-container card13 bg-green-50 rounded-lg p-6 text-center shadow-md">
+          <img class = "sec13-img" src="PointFive.webp">
+         <p>Guidance to start applying to a diverse set of job opportunities in-line with your career aspirations.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- Section 14-->
+
+    <section class="py-12 bg-white">
+      <div class="container mx-auto text-center flex flex-col items-center">
+          <div class="flex items-center mt-6 space-x-4 ml-4">
+             
+              <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+          </div>
+        <div class=" upper-h1 mb-4 mt-10 ">
+          <h2 class="text-2xl font-bold">Join A Community Of 10000+ Tech Professionals</h2>
+        </div>
+        <div class="lower-p1 mt-5">
+          <p class="text-gray-700"><strong>Hands-on, work experience-based learning</strong> is at the heart of everything you do at Crio. Build software projects like the top 1% Tech Professionals and <strong>learn all the skills </strong>you need to <strong>land the best</strong> Fullstack/Backend Developers or SDET Jobs.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+    <!-- Section 15-->
+
+    <section class = "section-15">
+      <div class = "sec15-main">
+        <div class = "sec15-header">
+          <p>Get more insights on how Crio can help you crack a
+            full stack or backend role in top tech companies</p>
+        </div>
+        <div class = "sec15-btns">
+          <button class = "sec15-btn1">Download Carrer Handbook &gt;</button>
+          <button class = "sec15-btn1">Download Placement Stats &gt;</button>
+        </div>
+      </div>
+    </section>
+
+   <!-- Section 16 -->
+    <section class = "section-16">
+      <div class = "sec16-main">
+        <img src = "Section1-cards.png">
+      </div>
+    </section>
+
+
+    <!--  Section 17-->
+
+<section class = "section-17">
+  <div class="flex items-center mt-6 space-x-4 ml-4">
+           
+    <a href="#" class="bg-customYellow1 text-black px-10 py-3  rounded text-lg hover:bg-yellow-600">Book Your Free Trial, Now &gt;</a>
+</div>
+</section>
+    <!-- Section 18-->
+
+    <sectin class = "section-18">
+      <div class = "sec18-main">
+        <img src = "Credit1.png">
+      </div>
+    </sectin>
+
+
+    <seciton class = "section-19">
+      <div class = "sec19-main">
+        <div class = "sec19-left">
+         <div class = "sec19-header">
+          <p>Have any further
+            questions?</p>
+         </div>
+         <button class = "sec19-btn">
+          Chat With Us &gt;
+         </button>
+        </div>
+        <div class = "sec19-right">
+         <img class = "sec19-img" src = "Chat.webp">
+        </div>
+      </div>
+    </seciton>
+
+
+
+    <section class = "section-20">
+      <img src = "Section-text.png">
+    </section>
+
+    <section class = "section-21">
+      <img src = "table.png">
+    </section>
+
+    <section class = "section-21">
+      <img src = "s-end.png">
+    </section>
+
+    <section class = "last-section">
+      <img src = "Last-s.png">
+    </section>
+         <script src="script.js"></script>
+
+    </body>
+
+</html>
